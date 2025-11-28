@@ -1,0 +1,162 @@
+<!doctype html>
+<!--
+  portfolio_webdev_musician.html
+  Single-file responsive portfolio for: Web Developer (UI/UX) + Musician (rap artist & instrumentalist)
+  Features:
+    - Responsive layout (desktop / tablet / mobile)
+    - JS-driven mobile nav toggle, audio player controls, portfolio filtering, simple form validation
+    - Easily replace images and audio sources
+    - All styling in this file for easy copy-paste
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Web Dev & Musician</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">WD</div>
+        <div>
+          <div style="font-weight:700">James Claude Jr. George AKA Divainie JC</div>
+          <div style="font-size:12px;color:var(--muted)">UI/UX Developer • Rap Artist • Instrumentalist</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#music">Music</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+
+      <button class="mobile-nav-toggle" id="navToggle">☰</button>
+    </header>
+
+    <div class="mobile-nav card" id="mobileNav">
+      <a href="#work">Work</a>
+      <a href="#music">Music</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Designer & Developer building clean interfaces — with beats on the side</h1>
+          <p class="lead">I make UI/UX-focused web experiences and produce original rap and instrumental tracks. Below are selected projects and audio snippets — responsive, accessible, and playful by default.</p>
+
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+            <div class="chip">HTML • CSS • JS</div>
+            <div class="chip">Figma • Prototyping</div>
+            <div class="chip">Ableton • FL Studio</div>
+          </div>
+
+          <div class="projects" id="work">
+            <div class="project">
+              <h3>Fintech Dashboard (UI/UX)</h3>
+              <p style="color:var(--muted);margin:8px 0">Designing data-first dashboards with accessible charts and mobile-first interactions.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip">React</span><span class="chip">Design System</span></div>
+            </div>
+            <div class="project">
+              <h3>Portfolio Builder</h3>
+              <p style="color:var(--muted);margin:8px 0">A lightweight static site generator for creators — fast and responsive.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip">Gatsby</span><span class="chip">Netlify</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3 style="margin-bottom:6px">About</h3>
+          <p class="lead">I split my time between shipping polished web interfaces and laying down verses or instrumental tracks. I focus on design systems, performance, and storytelling through sound.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-bottom:8px">Featured Track</h3>
+          <div class="track" data-type="rap">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=60" alt="cover" />
+            <div class="meta">
+              <h4>Midnight Drive</h4>
+              <div style="color:var(--muted);font-size:13px">Rap • 3:24</div>
+            </div>
+            <div class="controls">
+              <button class="icon" data-action="play" data-src="/tracks/midnight-drive.mp3">▶</button>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 6px 0">Tracks</h4>
+            <div class="filters" id="filters">
+              <button data-filter="all" class="active">All</button>
+              <button data-filter="rap">Rap</button>
+              <button data-filter="instrumental">Instrumental</button>
+            </div>
+
+            <div class="tracks" id="tracksList">
+              <div class="track" data-type="rap">
+                <img src="https://images.unsplash.com/photo-1506152983158-3f3b2a9b0a86?auto=format&fit=crop&w=400&q=60" alt="cover" />
+                <div class="meta"><h4>Night City (feat. Verse)</h4><div style="color:var(--muted);font-size:13px">Rap • 2:58</div></div>
+                <div class="controls"><button class="icon" data-action="play" data-src="/tracks/night-city.mp3">▶</button></div>
+              </div>
+
+              <div class="track" data-type="instrumental">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=400&q=60" alt="cover" />
+                <div class="meta"><h4>Warm Keys</h4><div style="color:var(--muted);font-size:13px">Instrumental • 4:01</div></div>
+                <div class="controls"><button class="icon" data-action="play" data-src="/tracks/warm-keys.mp3">▶</button></div>
+              </div>
+
+              <div class="track" data-type="instrumental">
+                <img src="https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=400&q=60" alt="cover" />
+                <div class="meta"><h4>Looped Roads</h4><div style="color:var(--muted);font-size:13px">Instrumental • 3:16</div></div>
+                <div class="controls"><button class="icon" data-action="play" data-src="/tracks/looped-roads.mp3">▶</button></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="two-col">
+      <div class="card" id="about">
+        <h3>Full Bio</h3>
+        <p class="lead">Jordan Reed is a UI/UX developer who crafts approachable interfaces and produces music for film and street — blending rhythm, voice, and texture. Available for collaboration and commissions.</p>
+
+        <h4 style="margin-top:12px">Skills</h4>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+          <span class="chip">UX Research</span><span class="chip">Design Systems</span><span class="chip">Accessibility</span><span class="chip">Audio Production</span>
+        </div>
+
+        <h4 style="margin-top:12px">Selected Work</h4>
+        <ul style="color:var(--muted)">
+          <li>RemixHub — Music collaboration platform (UI)</li>
+          <li>PulsePay — Mobile banking (UX/Product)</li>
+          <li>Score Suite — Custom instrumental library</li>
+        </ul>
+      </div>
+
+      <aside class="card" id="contact">
+        <h3>Contact / Book</h3>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Your email" required />
+          <textarea id="message" rows="4" placeholder="Tell me about the project" required></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
+        <div style="color:var(--muted);font-size:13px;margin-top:10px">Prefer DMs? <span style="color:var(--accent)">@jordanbeats</span></div>
+      </aside>
+    </section>
+
+    <footer>
+      © James Claude Jr. George AKA Divainie JC — Web Dev & Music • Built with HTML/CSS/JS
+    </footer>
+  </div>
+
+ <script src="/js/script.js"></script>
+</body>
+</html>
